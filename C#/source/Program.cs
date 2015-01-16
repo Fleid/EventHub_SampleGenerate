@@ -15,7 +15,7 @@ namespace Microsoft.ServiceBus.Samples
         #region Fields
 
         static string eventHubName = "devicereadings";
-        static int numberOfMessages = 200;
+        static int numberOfMessages = 20000;
         static int numberOfPartitions = 16;
         #endregion
 
@@ -29,8 +29,8 @@ namespace Microsoft.ServiceBus.Samples
             
             //Manage.CreateEventHub(eventHubName, numberOfPartitions, namespaceManager);
 
-            Receiver r = new Receiver(eventHubName, connectionString);
-            r.MessageProcessingWithPartitionDistribution();
+            //Receiver r = new Receiver(eventHubName, connectionString);
+            //r.MessageProcessingWithPartitionDistribution();
 
             Sender s = new Sender(eventHubName, numberOfMessages);
             s.SendEvents();
